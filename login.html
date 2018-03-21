@@ -1,21 +1,47 @@
-<<!DOCTYPE html>
 <html>
 <head>
 	<title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h3 style="text-align: center; font-size: 26px;">Login</h3>
-<form action="#" style="text-align: center;">
-	Username : <br>
-	<input type="text" name="username">
-	<br>
-	<br>
-	Password : <br>	
-	<input type="passsword" name="password">
-	<br>
-	<input type="checkbox" name="remember">Remember Me</input>
-	<br><br>
-	<input type="submit" value="Login">
-</form>
+<div class="background">
+    <form>
+        <div class="luar">
+            <div class="title">Masuk</div>
+            <div class="box">
+            
+                <div class="container">
+                <p style="text-align: center; font-weight: bold;">Masukan username dan password untuk Login!</p> <br>
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Masukan Username" name="uname" required>
+                <label for="pwd"><b>Password</b></label>
+                <input type="password" placeholder="Masukan Password" name="pwd" id="Pass" required>
+                <label>
+                <input type="checkbox" onclick="showPass()"> Show Password
+                <br>    
+                <input type="checkbox" name="remember" checked> Remember Me
+                </label>
+                <br>    
+                <button type="submit">Login</button>
+                <button type="button">Batal</button>
+                <br><br>
+                <p style="text-align: left">Belum punya akun? <br><a href="register.html">Daftar Sekarang</a> </p>
+                </div>
+            </div>
+        </div>    
+    </form> 
+    <footer>Copyright &copy; 2018 All Right Reserved <a href="internet.html#home"> Justinfo.com</a></footer>
+</div>
+<script>
+function showPass() {
+    var x = document.getElementById("Pass");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+</script>    
 </body>
 </html>
