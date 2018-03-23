@@ -1,0 +1,27 @@
+table{
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", sans-serif;
+	border-collapse: collapse;
+    width: 100%;
+    border:none;
+}
+td, th {
+    border: 1px solid #ddd;
+    padding: 10px;
+
+}
+
+tr:nth-child(even){
+	background-color: lightgray;
+}
+
+tr:hover {
+	background-color: #4CAF50;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
