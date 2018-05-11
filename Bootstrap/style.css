@@ -1,0 +1,22 @@
+.header{
+	background-color: #6F9FD8;
+	padding: 20px 10px;
+	border-radius: 25px 25px 0px 0px;
+	text-align: center;
+	color: white;
+	border-bottom: 10px solid #E94B3C;
+}
+.barinfo{
+	background-color: #6F9FD8;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	height: 50px;
+}
+.miniContent{
+	background-color: #6F9FD8;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	border-radius: 0px 0px 25px 25px;
+}
