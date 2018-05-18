@@ -5,9 +5,24 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fa/web-fonts-with-css/css/fontawesome-all.css">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+    	var app = angular.module("myApp", ["ngRoute"]);
+    	app.config(function($routeProvider)
+    	{
+    		$routeProvider
+    		.when("/",{
+    			templateUrl : "main.htm"
+    		})
+    		.when("/about", {
+    			templateUrl : "about.htm"
+    		})
+    	})
+    </script>
   </head>
   <body>
-	<div class="container">
+	<div ng-app="myApp" class="container">
 	<div class="row">
 		<div class="col-md-12 header">
 			<h1>My First Bootstrap Page</h1>
@@ -15,32 +30,22 @@
 	</div>
 	<div class="row">
 		<div class="col-md-12 barinfo">
-			<p>Some breaking Info!</p>
+			<i class="fas fa-home"></i>
+			<a href="#!">Home</a> |
+			<a href="#!about">About</a>
 		</div>
 	</div>
+
+	<ng-view></ng-view>
 	<div class="row">
-		<div class="col-md-4">
-			    <div class="card-body miniContent">
-			      <h4 class="card-title">Male</h4>
-			      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-			      <a href="#" class="btn btn-primary">Go To</a>
-			    </div>
-			</div>
-		<div class="col-md-4">
-			<div class="card-body miniContent">
-			      <h4 class="card-title">Male</h4>
-			      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-			      <a href="#" class="btn btn-primary">Go To</a>
-			    </div>
-		</div>
-		<div class="col-md-4">
-			<div class="card-body miniContent">
-			      <h4 class="card-title">Male</h4>
-			      <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-			      <a href="#" class="btn btn-primary">Go To</a>
-			    </div>
+		<div class="col-md-12 footer">
+			<p>Copyright &copy; 2018 All Right Reserved </p>
 		</div>
 		
-	</div>  	
+	</div>
+
+
+	</div>
+	
   </body>
 </html>
