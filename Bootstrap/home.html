@@ -15,17 +15,29 @@
     		.when("/",{
     			templateUrl : "main.htm"
     		})
-    		.when("/about", {
-    			templateUrl : "about.htm"
-    		})
-    	})
+    		.when("/about",{
+    			templateUrl : "about.htm", controller:"cuacaCtrl"
+    		});
+    	});
+
+        app.controller('homeCtrl', function($scope){
+            $scope.title="Welcome";
+        });
+
+        app.controller('cuacaCtrl', function($scope,$http){
+            $http.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=4de4dd041e499ca8a4f6692097befdae')
+            .then(function(response){
+                $scope.info = response.data; 
+            });
+        });
     </script>
   </head>
   <body>
-	<div ng-app="myApp" class="container">
+	<div ng-app="myApp" ng-controller="homeCtrl" class="container">
 	<div class="row">
 		<div class="col-md-12 header">
 			<h1>My First Bootstrap Page</h1>
+            <h1>{{title}}</h1>
 		</div>
 	</div>
 	<div class="row">
@@ -36,7 +48,7 @@
 		</div>
 	</div>
 
-	<ng-view></ng-view>
+	 <ng-view></ng-view> 
 	<div class="row">
 		<div class="col-md-12 footer">
 			<p>Copyright &copy; 2018 All Right Reserved </p>
